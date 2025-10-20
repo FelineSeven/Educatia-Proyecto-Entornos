@@ -1,0 +1,127 @@
+CREATE DATABASE IF NOT EXISTS `Educatia-Entornos` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish2_ci */;
+USE `Educatia-Entornos`;
+
+create table if not exists cursos (
+    id_curso int not null auto_increment,
+    nombre_asignatura varchar(20),
+    descripcion text,
+    primary key(id_curso)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+;
+
+create table if not exists temas (
+    id_tema int not null auto_increment,
+    titulo varchar(50),
+    descripcion text,
+    id_curso int not null,
+    primary key(id_tema),
+    constraint fk_cursos_temas foreign key(id_curso) references cursos(id_curso)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+;
+
+create table if not exists examenes (
+    id_examen int not null auto_increment,
+    titulo varchar(50),
+    descripcion text,
+    id_tema int not null,
+    valor_examen double,
+    primary key(id_examen),
+    constraint fk_temas_examenes foreign key(id_tema) references temas(id_tema)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+;
+
+create table if not exists usuarios (
+    id_usuario int not null auto_increment,
+    nombre_usuario varchar(20) not null,
+    password_usuario varchar(20) not null,
+    primary key(id_usuario)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+;
+
+create table if not exists profesores (
+    id_profesor int not null auto_increment,
+    nombre varchar(50) not null,
+    correo varchar(80),
+    telefono int(20),
+    estudios text,
+    numero_documento int(20) not null,
+    id_usuario int,
+    primary key(id_profesor),
+    constraint fk_usuarios_profesores foreign key(id_usuario) references usuarios(id_usuario)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+;
+
+create table if not exists estudiantes (
+    id_estudiante int not null auto_increment,
+    nombre varchar(50) not null,
+    correo varchar(80),
+    id_usuario int,
+    primary key(id_estudiante),
+    constraint fk_usuarios_estudiantes foreign key(id_usuario) references usuarios(id_usuario)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+;
+
+create table if not exists calificaciones (
+    id_calificacion int not null auto_increment,
+    calificacion double not null,
+    descripcion varchar(100),
+    id_examen int not null,
+    id_estudiante int not null,
+    primary key(id_calificacion),
+    constraint fk_estudiantes_calificaciones foreign key(id_estudiante) references estudiantes(id_estudiante),
+    constraint fk_examenes_calificaciones foreign key(id_examen) references examenes(id_examen)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+;
+
+create table if not exists grupos (
+    id_grupo int not null auto_increment,
+    horario varchar(100),
+    descripcion text,
+    id_profesor int,
+    id_curso int not null,
+    primary key(id_grupo),
+    constraint fk_profesores_grupos foreign key(id_profesor) references profesores(id_profesor),
+    constraint fk_cursos_grupos foreign key(id_curso) references cursos(id_curso)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+;
+
+create table if not exists grupos_estudiantes (
+    id_grupoEstudiante int not null auto_increment,
+    id_estudiante int not null,
+    id_grupo int not null,
+    primary key(id_grupoEstudiante),
+    constraint fk_grupos_grupos_estudiantes foreign key(id_grupo) references grupos(id_grupo),
+    constraint fk_estudiantes_grupos_estudiantes foreign key(id_estudiante) references estudiantes(id_estudiante)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+;
+
+create table if not exists grupos_examenes (
+    id_grupo_examen int not null auto_increment,
+    id_grupo int not null,
+    id_examen int not null,
+    primary key(id_grupo_examen),
+    constraint fk_grupos_grupos_examenes foreign key(id_grupo) references grupos(id_grupo),
+    constraint fk_examenes_grupos_examenes foreign key(id_examen) references examenes(id_examen)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+;
+
+create table if not exists preguntas (
+    id_pregunta int not null auto_increment,
+    id_examen int not null,
+    descripcion text,
+    valor_Porcentaje double,
+    opciones_de_respuesta text,
+    primary key(id_pregunta),
+    constraint fk_examen_preguntas foreign key(id_examen) references examenes(id_examen)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+;
+
+create table if not exists respuestas (
+    id_respuesta int not null auto_increment,
+    respuesta varchar(20),
+    descripcion text,
+    id_pregunta int not null,
+    primary key(id_respuesta),
+    constraint fk_preguntas_respuestas foreign key(id_pregunta) references preguntas(id_pregunta)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+;
