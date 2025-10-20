@@ -1,0 +1,38 @@
+body {
+    background-color: #f5f5dc; /* beige */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #89cac3;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    margin: 20px auto;   
+    width: 95%;
+}
+.navbar button {
+    background: white;
+    color: #000000;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.navbar button:hover {
+    background-color: #e0e0e0;
+}
+
+.temas-titulo{
+    font-size: 1rem;
+    text-align: center;
+}
+.crear-tema{
+    text-align: center;
+}
+.table-temas{
+    text-align: center;
+}

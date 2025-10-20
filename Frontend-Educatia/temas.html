@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temas</title>
+    <link rel="stylesheet" href="css/temas.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <button onclick="window.location.href='index.html'">Pagina Principal</button>
+        <button onclick="window.location.href='cursos.html'">Cursos</button>
+    </nav>
+    <div class="temas-titulo">
+        <h1>Temas</h1>
+    </div>
+
+    <div class="crear-tema">
+    <main>
+        <section id="formulario-tema">
+            <h2>Crear un nuevo tema</h2>
+            <input type="text" id="titulo" placeholder="Título del tema">
+            <textarea id="descripcion" placeholder="Descripción del tema"></textarea>
+            <button id="btn-crear">Crear Tema</button>
+        </section>
+    </main>
+    </div>
+    <div >
+        <section id="lista-temas">
+            <h2>Lista de temas</h2>
+            <table class="table-temas">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="temas-body">
+                    <!-- Aquí se cargarán los temas -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+    <script src="js/temas.js"></script>
+</body>
+</html>
