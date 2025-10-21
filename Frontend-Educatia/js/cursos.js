@@ -52,7 +52,7 @@ async function listarCursos() {
             <small>${curso.descripcion || "Sin descripción"}</small><br>
             <button onclick="editarCurso(${curso.idCurso || curso.id_curso}, '${encodeURIComponent(curso.nombreAsignatura || "")}', '${encodeURIComponent(curso.descripcion || "")}')">Editar</button>
             <button onclick="eliminarCurso(${curso.idCurso || curso.id_curso})">Eliminar</button>
-            <button onclick="verTemas(${curso.idCurso || curso.id_curso})">Ver Temas</button>
+            <button onclick="verTemas(${curso.idCurso || curso.id_curso}, '${encodeURIComponent(curso.nombreAsignatura || curso.nombre_asignatura || "")}')">Ver Temas</button>
         `;
         lista.appendChild(li);
     });
@@ -65,11 +65,17 @@ async function eliminarCurso(id) {
     listarCursos();
 }
 
+function verTemas(idCurso, nombreAsignatura) {
+    window.location.href = `temas.html?id=${idCurso}&nombre=${encodeURIComponent(nombreAsignatura)}`;
+}
+
+document.addEventListener("DOMContentLoaded", listarCursos);
+
 // --- Navegar a temas del curso ---
+/*
 function verTemas(idCurso) {
     window.location.href = `temas.html?curso=${idCurso}`;
 }
 
 listarCursos();
-
-
+*/

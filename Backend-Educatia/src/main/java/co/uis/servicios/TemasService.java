@@ -30,6 +30,10 @@ public class TemasService {
     public Temas buscarPorId(int id) {
         return temasRepositorio.findById(id).orElse(null);
     }
+    
+    public List<Temas> buscarPorIdCurso(int idCurso) {
+        return temasRepositorio.findByIdCurso(idCurso);
+    }
 
     public Temas actualizar(int id, Temas temaActualizado) {
         Temas existente = buscarPorId(id);

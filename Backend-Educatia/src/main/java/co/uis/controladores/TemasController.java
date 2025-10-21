@@ -31,6 +31,11 @@ public class TemasController {
     public Temas buscarPorId(@PathVariable int id) {
         return temasService.buscarPorId(id);
     }
+    
+    @GetMapping("/curso/{idCurso}")
+    public List<Temas> buscarPorIdCurso(@PathVariable int idCurso) {
+        return temasService.buscarPorIdCurso(idCurso);
+    }
 
     @PostMapping
     public Temas guardar(@RequestBody Temas tema) {
