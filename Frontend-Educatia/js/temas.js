@@ -83,10 +83,6 @@ async function cargarTemas() {
 }
 
 
-// ================================================================
-// 🆕 SECCIÓN 3: EDITAR TEMA
-// ================================================================
-
 async function editarTema(id, tituloActual, descripcionActual) {
     const nuevoTitulo = prompt('Nuevo título:', tituloActual);
     const nuevaDescripcion = prompt('Nueva descripción:', descripcionActual);
@@ -117,11 +113,6 @@ async function editarTema(id, tituloActual, descripcionActual) {
     }
 }
 
-
-// ================================================================
-// 🆕 SECCIÓN 4: ELIMINAR TEMA
-// ================================================================
-
 async function eliminarTema(id) {
     if (!confirm('¿Seguro que quieres eliminar este tema?')) return;
 
@@ -134,18 +125,10 @@ async function eliminarTema(id) {
 }
 
 
-// ================================================================
-// 🆕 SECCIÓN 5: IR A EXÁMENES DEL TEMA
-// ================================================================
-
 function irAExamenes(idTema) {
     window.location.href = `examenes.html?idTema=${idTema}`;
 }
 
-
-// ================================================================
-// 🔹 SECCIÓN FINAL: EVENTOS E INICIALIZACIÓN
-// ================================================================
 
 // Al hacer clic en "Crear tema", ejecuta la función correspondiente
 btnCrear.addEventListener('click', crearTema);
