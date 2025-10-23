@@ -3,7 +3,9 @@
 
 JIRA: https://felineseven9.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?atlOrigin=eyJpIjoiZGRjMDliNGJkODAxNDA0ZjhlOTgwM2JkNGIxN2VkNWUiLCJwIjoiaiJ9
 
-Este proyecto es una aplicación CRUD desarrollada para la gestión de cursos y sus temas asociados.
+Educatia es un proyecto enfocado en la gestión de actividades evaluativas relacionadas con los temas vistos en cada curso al que un estudiante esté matriculado.
+Su objetivo es ofrecer una herramienta sencilla e intuitiva que facilite la práctica de los conceptos aprendidos en las asignaturas, así como el acceso a la información y materiales que los profesores compartan a través de la plataforma.
+Este proyecto actualmente cuenta con las operaciones CRUD desarrolladas para la gestión de cursos y sus temas asociados.
 Cada curso puede tener múltiples temas, y el sistema permite realizar las operaciones básicas de creación, lectura, actualización y eliminación (Create, Read, Update, Delete) tanto para cursos como para temas.
 
 El sistema implementa autenticación y autorización basada en roles, utilizando JWT (JSON Web Token) para el control de acceso.
