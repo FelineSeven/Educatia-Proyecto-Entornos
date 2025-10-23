@@ -39,3 +39,14 @@ Dependiendo del rol asignado al usuario, se definen los permisos sobre las funci
 - Consultar tema específico  
 - Actualizar tema  
 - Eliminar tema  
+
+### **Seguridad con Roles**
+
+El sistema maneja roles de usuario con permisos específicos:
+
+| **Rol**        | **Descripción** | **Permisos** |
+|----------------|-----------------|---------------|
+| **ADMIN**      | Administrador del sistema | Acceso total a los CRUD de cursos y temas |
+| **PROFESOR**   | Creador o editor de cursos | Puede crear y editar cursos y temas |
+| **ESTUDIANTE** | Usuario con permisos de lectura | Solo puede visualizar los cursos y temas |
+
