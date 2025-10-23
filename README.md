@@ -11,9 +11,9 @@ Dependiendo del rol asignado al usuario, se definen los permisos sobre las funci
 
 ## **Arquitectura y Tecnologías Utilizadas**
 
-- **Backend:** Spring Boot (Java)
+**Backend:** Spring Boot (Java)
 
-- **Dependencias principales:**
+**Dependencias principales:**
 
  - Spring Web
  - Spring Data JPA
@@ -21,5 +21,21 @@ Dependiendo del rol asignado al usuario, se definen los permisos sobre las funci
  - JWT (JSON Web Token)
  - MySQL o MariaDB (Base de Datos)
 
-- **Gestión de dependencias:** Maven
-- **Pruebas de API:**  Swagger UI / Postman
+ **Gestión de dependencias:** Maven
+ **Pruebas de API:**  Swagger UI / Postman
+ 
+## **Funcionalidades Principales**
+
+### **CRUD de Cursos**
+- Crear un nuevo curso  
+- Consultar todos los cursos  
+- Consultar curso por ID  
+- Actualizar datos de un curso  
+- Eliminar curso  
+
+### **CRUD de Temas (asociados a cada curso)**
+- Crear tema dentro de un curso  
+- Listar temas de un curso  
+- Consultar tema específico  
+- Actualizar tema  
+- Eliminar tema  
