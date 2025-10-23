@@ -9,22 +9,17 @@ Cada curso puede tener múltiples temas, y el sistema permite realizar las opera
 El sistema implementa autenticación y autorización basada en roles, utilizando JWT (JSON Web Token) para el control de acceso.
 Dependiendo del rol asignado al usuario, se definen los permisos sobre las funcionalidades del sistema.
 
-Arquitectura y Tecnologías Utilizadas
+## **Arquitectura y Tecnologías Utilizadas**
 
-Backend: Spring Boot (Java)
+- **Backend:** Spring Boot (Java)
 
-Dependencias principales:
+- **Dependencias principales:**
 
-- Spring Web
+ - Spring Web
+ - Spring Data JPA
+ - Spring Security
+ - JWT (JSON Web Token)
+ - MySQL o MariaDB (Base de Datos)
 
-- Spring Data JPA
-
-- Spring Security
-
-- JWT (JSON Web Token)
-
-- MySQL o MariaDB (Base de Datos)
-
-Gestión de dependencias: Maven
-
-Pruebas de API: Swagger UI / Postman
+- **Gestión de dependencias:** Maven
+- **Pruebas de API:**  Swagger UI / Postman
