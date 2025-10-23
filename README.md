@@ -40,7 +40,7 @@ Dependiendo del rol asignado al usuario, se definen los permisos sobre las funci
 - Actualizar tema  
 - Eliminar tema  
 
-### **Seguridad con Roles**
+## **Seguridad con Roles**
 
 El sistema maneja roles de usuario con permisos específicos:
 
