@@ -8,6 +8,8 @@ import Navbar from "./components/Navbar";
 import Cursos from "./pages/Cursos";
 import Temas from "./pages/Temas";
 import Home from "./pages/Home";
+import Examenes from "./pages/Examenes";
+import ExamenForm from "./components/ExamenForm";
 
 const App = () => {
   return (
@@ -17,6 +19,9 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/cursos" element={<Cursos />} />
         <Route path="/temas" element={<Temas />} />
+        <Route path="/examenes" element={<Examenes />} />
+        <Route path="/examenes/crear" element={<ExamenForm />} />
+        <Route path="/examenes/editar/:id" element={<ExamenForm />} />
       </Routes>
     </Router>
   );
