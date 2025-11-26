@@ -52,6 +52,7 @@ import Preguntas from "./pages/Preguntas";
 import CursosEstudiante from "./pages/CursosEstudiante";
 import TemasEstudiante from "./pages/TemasEstudiante";
 import ExamenEstudiante from "./pages/ExamenEstudiante";
+import ExamenEstudianteReal from "./pages/ExamenEstudianteReal";
 
 const App = () => {
   return (
@@ -68,8 +69,8 @@ const App = () => {
 
         <Route path="/cursos-estudiante" element={<CursosEstudiante />} />
         <Route path="/temas-estudiante/:idCurso" element={<TemasEstudiante />} />
-        <Route path="/examen-estudiante/:idExamen" element={<ExamenEstudiante />} />
-
+        <Route path="/examenes-estudiante/:idTema" element={<ExamenEstudiante />} />
+        <Route path="/examen-estudiante/:idExamen" element={<ExamenEstudianteReal />} />
       </Routes>
     </Router>
   );

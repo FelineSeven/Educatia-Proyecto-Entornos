@@ -23,8 +23,8 @@ export default function TemasEstudiante() {
         {temas.map(t => (
           <li key={t.idTema}>
             {t.titulo}
-            <button onClick={() => navigate(`/examen-estudiante/${t.idTema}`)}>
-              Ver Examen
+            <button onClick={() => navigate(`/examenes-estudiante/${t.idTema}`)}>
+              Ver Examenes
             </button>
           </li>
         ))}
