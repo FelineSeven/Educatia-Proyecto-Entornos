@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { listarTemasPorCurso } from "../services/temasService";
+import { listarTemas } from "../services/temaService";
 
 export default function TemasEstudiante() {
   const { idCurso } = useParams();
@@ -9,7 +9,7 @@ export default function TemasEstudiante() {
 
   useEffect(() => {
     const cargarTemas = async () => {
-      const data = await listarTemasPorCurso(idCurso);
+      const data = await listarTemas(idCurso);
       setTemas(data);
     };
     cargarTemas();
@@ -22,7 +22,7 @@ export default function TemasEstudiante() {
         {temas.length === 0 && <p>No hay temas disponibles.</p>}
         {temas.map(t => (
           <li key={t.idTema}>
-            {t.nombre}
+            {t.titulo}
             <button onClick={() => navigate(`/examen-estudiante/${t.idTema}`)}>
               Ver Examen
             </button>

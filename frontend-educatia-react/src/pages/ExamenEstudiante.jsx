@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { listarPreguntasPorTema } from "../services/preguntasService";
+import { listarPreguntasPorExamen } from "../services/preguntasService";
 
 export default function ExamenEstudiante() {
-  const { idTema } = useParams();
+  const { idExamen } = useParams();
   const [preguntas, setPreguntas] = useState([]);
   const [respuestasSeleccionadas, setRespuestasSeleccionadas] = useState({});
 
   useEffect(() => {
     const cargarPreguntas = async () => {
-      const data = await listarPreguntasPorTema(idTema);
+      const data = await listarPreguntasPorExamen(idExamen);
       setPreguntas(data);
     };
     cargarPreguntas();
-  }, [idTema]);
+  }, [idExamen]);
 
   const toggleRespuesta = (idPregunta, idRespuesta) => {
     setRespuestasSeleccionadas(prev => ({

@@ -1,5 +1,7 @@
 // src/App.jsx
 // App.jsx
+
+/* VERSION QUE FUNCIONA SIN NADA DE LAS VISTAS DE ESTUDIANTES
 import "./style.css";
 import "./temas.css";
 import React from "react";
@@ -31,7 +33,10 @@ const App = () => {
 };
 
 export default App;
-/*
+
+*/
+
+/*Version con estudiantes en construccipón*/
 import "./style.css";
 import "./temas.css";
 import React from "react";
@@ -63,7 +68,7 @@ const App = () => {
 
         <Route path="/cursos-estudiante" element={<CursosEstudiante />} />
         <Route path="/temas-estudiante/:idCurso" element={<TemasEstudiante />} />
-        <Route path="/examen-estudiante/:idTema" element={<ExamenEstudiante />} />
+        <Route path="/examen-estudiante/:idExamen" element={<ExamenEstudiante />} />
 
       </Routes>
     </Router>
@@ -71,6 +76,3 @@ const App = () => {
 };
 
 export default App;
-
-
-*/

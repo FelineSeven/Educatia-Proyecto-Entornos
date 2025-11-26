@@ -9,6 +9,7 @@ export default function CursosEstudiante() {
   useEffect(() => {
     const cargarCursos = async () => {
       const data = await listarCursos();
+      console.log("Cursos recibidos:", data);
       setCursos(data);
     };
     cargarCursos();
@@ -21,7 +22,7 @@ export default function CursosEstudiante() {
         {cursos.length === 0 && <p>No hay cursos disponibles.</p>}
         {cursos.map(c => (
           <li key={c.idCurso}>
-            <strong>{c.nombre}</strong>
+            <strong>{c.nombreAsignatura}</strong>
             <button onClick={() => navigate(`/temas-estudiante/${c.idCurso}`)}>
               Ver Temas
             </button>
