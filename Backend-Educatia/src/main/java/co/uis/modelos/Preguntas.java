@@ -17,6 +17,7 @@ public class Preguntas {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column(name = "id_pregunta")
 	private int idPregunta;
 	
 	@ManyToOne
@@ -27,14 +28,14 @@ public class Preguntas {
 	private String descripcion;
 	
 	@Column(name = "valor_Porcentaje")
-	private String valorPorcentaje;
+	private double valorPorcentaje;
 	
 	@Column(name = "opciones_de_respuesta")
 	private String opcionesRespuesta;
 	
 	
 
-	public Preguntas(int idPregunta, Examenes idExamen, String descripcion, String valorPorcentaje,
+	public Preguntas(int idPregunta, Examenes idExamen, String descripcion, double valorPorcentaje,
 			String opcionesRespuesta) {
 		super();
 		this.idPregunta = idPregunta;
@@ -71,11 +72,11 @@ public class Preguntas {
 		this.descripcion = descripcion;
 	}
 
-	public String getValorPorcentaje() {
+	public double getValorPorcentaje() {
 		return valorPorcentaje;
 	}
 
-	public void setValorPorcentaje(String valorPorcentaje) {
+	public void setValorPorcentaje(double valorPorcentaje) {
 		this.valorPorcentaje = valorPorcentaje;
 	}
 
