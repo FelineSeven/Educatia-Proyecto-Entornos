@@ -10,6 +10,7 @@ import Temas from "./pages/Temas";
 import Home from "./pages/Home";
 import Examenes from "./pages/Examenes";
 import ExamenForm from "./components/ExamenForm";
+import Preguntas from "./pages/Preguntas";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/examenes" element={<Examenes />} />
         <Route path="/examenes/crear" element={<ExamenForm />} />
         <Route path="/examenes/editar/:id" element={<ExamenForm />} />
+        <Route path="/preguntas" element={<Preguntas />} />
       </Routes>
     </Router>
   );

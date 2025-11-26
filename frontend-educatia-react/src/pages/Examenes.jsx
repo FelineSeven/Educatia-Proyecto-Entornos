@@ -56,6 +56,8 @@ export default function Examenes() {
             <button onClick={() => borrar(ex.id_examen)}>
               Eliminar
             </button>
+
+            <button onClick={() => navigate(`/preguntas?examen=${ex.id_examen}&titulo=${encodeURIComponent(ex.titulo)}`)}>Ver preguntas</button>
           </li>
         ))}
       </ul>
