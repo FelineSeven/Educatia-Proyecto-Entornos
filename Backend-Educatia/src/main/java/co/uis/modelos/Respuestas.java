@@ -17,12 +17,13 @@ public class Respuestas {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column(name = "id_respuesta")
 	private int idRespuesta;
 	
 	@Column(name = "respuesta")
 	private String respuesta;
 	
-	@Column(name = "decripcion")
+	@Column(name = "descripcion")
 	private String descripcion;
 	
 	@ManyToOne
