@@ -6,7 +6,8 @@ JIRA: https://felineseven9.atlassian.net/jira/software/projects/SCRUM/boards/1/b
 Educatia es un proyecto enfocado en la gestión de actividades evaluativas relacionadas con los temas vistos en cada curso al que un estudiante esté matriculado.
 Su objetivo es ofrecer una herramienta sencilla e intuitiva que facilite la práctica de los conceptos aprendidos en las asignaturas, así como el acceso a la información y materiales que los profesores compartan a través de la plataforma.
 
-Este proyecto actualmente cuenta con las operaciones CRUD desarrolladas para la gestión de cursoos, temas, examenes, preguntas y respuestas asociadas.
+Este proyecto actualmente cuenta con las operaciones CRUD desarrolladas para la gestión de cursos, temas, examenes, preguntas y respuestas asociadas.
+
 Cada curso puede tener múltiples temas, y el sistema permite realizar las operaciones básicas de creación, lectura, actualización y eliminación (Create, Read, Update, Delete) tanto para cursos como para temas.
 
 El sistema implementa autenticación y autorización basada en roles, utilizando JWT (JSON Web Token) para el control de acceso.
@@ -60,7 +61,8 @@ Dependiendo del rol asignado al usuario, se definen los permisos sobre las funci
 - Eliminar preguntas
 
 ### Modelo de Base de Datos
-![Database](Diagrama Entidad Relación educatia.jpg)
+![Diagrama Entidad Relación](./Diagrama%20Entidad%20Relación%20educatia.jpg)
+
 ## **Seguridad con Roles**
 
 El sistema maneja roles de usuario con permisos específicos:
