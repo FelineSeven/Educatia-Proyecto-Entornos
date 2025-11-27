@@ -37,6 +37,23 @@ export default function Preguntas() {
   };
 
   return (
+    <div className="preguntas-container">
+    <h1 className="tituloPagina">
+      Preguntas del Examen: <strong>{titulo}</strong>
+    </h1>
+
+    <div className="preguntas-form-card">
+      <PreguntasForm idExamen={idExamen} recargar={cargar} />
+    </div>
+
+    <hr />
+
+    <div className="preguntas-list-card">
+      <PreguntasList preguntas={preguntas} recargar={manejarRecargar} />
+    </div>
+  </div>
+
+    /* ANTERIOR FUNCIONAL
     <div>
       <h1>Preguntas del examen: <strong>{titulo}</strong></h1>
 
@@ -46,5 +63,6 @@ export default function Preguntas() {
 
       <PreguntasList preguntas={preguntas} recargar={manejarRecargar} />
     </div>
+    */
   );
 }

@@ -55,6 +55,46 @@ export default function ExamenEstudianteReal() {
   };
 
   return (
+    <div className="examen-est-container">
+    <h1 className="examen-titulo">{examen?.titulo}</h1>
+    <p className="examen-descripcion">{examen?.descripcion}</p>
+
+    <div className="preguntas-estudiante-list">
+      {preguntas.map((p) => (
+        <div className="pregunta-est-card" key={p.idPregunta}>
+          <h3 className="pregunta-text">{p.descripcion}</h3>
+
+          <ul className="respuestas-est-list">
+            {p.respuestas.map((r) => (
+              <li key={r.idRespuesta} className="respuesta-item">
+                <label>
+                  <input
+                    type="radio"
+                    name={`preg-${p.idPregunta}`}
+                    checked={respuestas[p.idPregunta] === r.idRespuesta}
+                    onChange={() =>
+                      seleccionarRespuesta(p.idPregunta, r.idRespuesta)
+                    }
+                  />
+                  {r.respuesta}{" "}
+                  <small className="respuesta-descripcion">({r.descripcion})</small>
+                </label>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div className="cont-btn-entregarex">
+    {preguntas.length > 0 && (
+      <button className="btn-entregar-examen" onClick={entregar}>
+        Entregar Examen
+      </button>
+    )}
+    </div>
+
+  </div>
+    /*
     <div>
       <h1>{examen?.titulo}</h1>
       <p>{examen?.descripcion}</p>
@@ -84,9 +124,10 @@ export default function ExamenEstudianteReal() {
       ))}
 
       {preguntas.length > 0 && (
-        <button onClick={entregar}>Entregar examen</button>
+        <button onClick={entregar}>Entregar Examen</button>
       )}
     </div>
+    */
   );
 }
 

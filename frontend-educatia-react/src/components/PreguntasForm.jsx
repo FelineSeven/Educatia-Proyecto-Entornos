@@ -30,6 +30,39 @@ export default function PreguntasForm({ idExamen, recargar }) {
   };
 
   return (
+    <section id="crear-pregunta" className="pregunta-form-card">
+    <h2>Agregar Pregunta</h2>
+
+    <input
+      className="input-estandar"
+      type="text"
+      placeholder="Escriba la pregunta"
+      value={descripcion}
+      onChange={e => setDescripcion(e.target.value)}
+    />
+
+    <input
+      className="input-estandar"
+      type="number"
+      placeholder="Valor porcentual"
+      value={valorPorcentaje}
+      onChange={e => setValorPorcentaje(e.target.value)}
+    />
+
+    <input
+      className="input-estandar"
+      type="text"
+      placeholder="Opciones (separadas por coma)"
+      value={opcionesRespuesta}
+      onChange={e => setOpcionesRespuesta(e.target.value)}
+    />
+
+    <button className="btn-guardar" onClick={enviar}>
+      Agregar
+    </button>
+  </section>
+
+    /* VERSION FUNCIONAL SIN ESTILOS
     <section id="crear-pregunta">
       <h3>Crear Pregunta</h3>
 
@@ -56,102 +89,6 @@ export default function PreguntasForm({ idExamen, recargar }) {
 
       <button onClick={enviar}>Agregar</button>
     </section>
+    */
   );
 }
-
-/*
-import { useState } from "react";
-import { crearPregunta } from "../services/preguntasService";
-
-export default function PreguntasForm({ idExamen, recargar }) {
-  const [descripcion, setDescripcion] = useState("");
-  const [valorPorcentaje, setValorPorcentaje] = useState(0);
-  const [opcionesRespuesta, setOpcionesRespuesta] = useState("");
-
-  const enviar = async (e) => {
-    e.preventDefault();
-
-    const pregunta = {
-      descripcion,
-      valorPorcentaje: Number(valorPorcentaje),
-      opcionesRespuesta,
-      idExamen: {
-        id_examen: Number(idExamen)   // 🔥 AQUÍ ESTÁ LA CLAVE
-      }
-    };
-
-    await crearPregunta(pregunta);
-
-    setDescripcion("");
-    setValorPorcentaje(0);
-    setOpcionesRespuesta("");
-
-    recargar();
-  };
-
-  return (
-    <form onSubmit={enviar}>
-      <h3>Crear Pregunta</h3>
-
-      <input
-        type="text"
-        placeholder="Descripción"
-        value={descripcion}
-        onChange={e => setDescripcion(e.target.value)}
-        required
-      />
-
-      <input
-        type="number"
-        placeholder="Valor %"
-        value={valorPorcentaje}
-        onChange={e => setValorPorcentaje(e.target.value)}
-        required
-      />
-
-      <input
-        type="text"
-        placeholder="Opciones (separadas por ';')"
-        value={opcionesRespuesta}
-        onChange={e => setOpcionesRespuesta(e.target.value)}
-      />
-
-      <button type="submit">Crear Pregunta</button>
-    </form>
-  );
-}
-
-
-import React, { useState } from "react";
-import { crearPregunta } from "../services/preguntasService";
-
-export default function PreguntasForm({ idExamen, recargar }) {
-  const [enunciado, setEnunciado] = useState("");
-
-  const guardar = async () => {
-    if (!enunciado) return alert("Debes escribir una pregunta");
-
-    await crearPregunta({
-      enunciado,
-      idExamen: { idExamen } // IMPORTANTE: así lo espera tu backend
-    });
-
-    setEnunciado("");
-    recargar();
-  };
-
-  return (
-    <div>
-      <h3>Crear pregunta</h3>
-      <input
-        type="text"
-        placeholder="Escribe una nueva pregunta"
-        value={enunciado}
-        onChange={e => setEnunciado(e.target.value)}
-      />
-
-      <button onClick={guardar}>Agregar</button>
-    </div>
-  );
-}
-*/

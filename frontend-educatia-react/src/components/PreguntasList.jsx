@@ -53,6 +53,88 @@ export default function PreguntasList({ preguntas, recargar }) {
   };
 
   return (
+    <ul className="preguntas-list">
+
+    {preguntas.length === 0 && <p>No hay preguntas registradas.</p>}
+
+    {preguntas.map((p) => (
+      <li key={p.idPregunta}>
+
+        <div className="pregunta-card">
+
+          <div className="card-content">
+            <strong>{p.descripcion}</strong>
+            <br />
+            Valor: {p.valorPorcentaje}%
+            
+          </div>
+
+          <div className="acciones">
+            <button
+              onClick={() => {
+                const nuevaDescripcion = prompt("Nueva descripción:", p.descripcion);
+                if (!nuevaDescripcion) return;
+
+                const nuevoValor = prompt("Nuevo valor porcentual:", p.valorPorcentaje);
+                if (nuevoValor === null || nuevoValor === "" || isNaN(nuevoValor)) {
+                  alert("Valor porcentual inválido");
+                  return;
+                }
+
+                const nuevasOpciones = prompt(
+                  "Nuevas opciones (separadas por coma):",
+                  p.opcionesRespuesta
+                );
+                if (!nuevasOpciones) return;
+
+                recargar({
+                  modo: "editar",
+                  pregunta: {
+                    ...p,
+                    descripcion: nuevaDescripcion,
+                    valorPorcentaje: Number(nuevoValor),
+                    opcionesRespuesta: nuevasOpciones,
+                  },
+                });
+              }}
+            >
+              Editar
+            </button>
+
+            <button className="btn-eliminar" onClick={() => borrar(p.idPregunta)}>Eliminar</button>
+          </div>
+
+          {/* ---------- Respuestas dentro del card ---------- */}
+          <div className="respuestas-contenedor">
+            <h4>Respuestas</h4>
+
+            <RespuestasForm
+              idPregunta={p.idPregunta}
+              recargarRespuestas={() => recargarRespuestas(p.idPregunta)}
+            />
+
+            <ul>
+              {(respuestasPorPregunta[p.idPregunta] || []).map((r) => (
+                <li key={r.idRespuesta}>
+                  {r.respuesta} ({r.descripcion}) {r.respuestaCorrecta && "✅"}{" "}
+                  <button onClick={() => editarRespuestaClick(r, p.idPregunta)}>
+                    Editar
+                  </button>
+                  <button onClick={() => borrarRespuesta(r.idRespuesta, p.idPregunta)}>
+                    Eliminar
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+      </li>
+    ))}
+  </ul>
+
+
+    /* VERSION FUNCIONAL ANTES DE AGREGAR ESTILOS
     <ul>
       {preguntas.length === 0 && <p>No hay preguntas registradas.</p>}
 
@@ -99,7 +181,7 @@ export default function PreguntasList({ preguntas, recargar }) {
 
           <button onClick={() => borrar(p.idPregunta)}>Eliminar</button>
 
-          {/* ---------- Respuestas debajo de la pregunta ---------- */}
+          
           <div style={{ marginLeft: "20px", marginTop: "10px" }}>
             <h4>Respuestas</h4>
             <RespuestasForm
@@ -120,5 +202,6 @@ export default function PreguntasList({ preguntas, recargar }) {
         </li>
       ))}
     </ul>
+    */
   );
 }

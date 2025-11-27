@@ -48,7 +48,7 @@ export default function ExamenesEstudiante() {
                     className="table-button"
                     onClick={() => navigate(`/examen-estudiante/${ex.id_examen}`)}
                   >
-                    Comenzar examen
+                    Comenzar Examen
                   </button>
                 </td>
               </tr>

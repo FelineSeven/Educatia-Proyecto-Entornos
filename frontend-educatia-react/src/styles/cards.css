@@ -388,3 +388,198 @@ button.edit{
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/*-----------------------------------------------------*/
+/*------------------PREGUNTAS----------------*/
+/*-----------------------------------------------------*/
+
+/* contenedor de cada pregunta (card) */
+.pregunta-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  box-sizing: border-box;      /* importante para padding/anchos */
+  width: 100%;
+  display: flex;
+  flex-direction: column;      /* para apilar contenido verticalmente */
+  gap: 12px;
+  overflow: hidden;            /* evita que elementos "salgan" del card */
+  position: relative;
+}
+
+/* contenido textual dentro del card */
+.pregunta-card .card-content {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* contenedor de respuestas dentro del card */
+.pregunta-card .respuestas-contenedor {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  max-height: 220px;           /* límite vertical razonable */
+  overflow-y: auto;            /* scroll si hay muchas respuestas */
+}
+
+/* lista de respuestas: que no se salgan y se acomoden */
+.pregunta-card .respuestas-contenedor ul {
+  margin: 0;
+  padding-left: 16px;
+  list-style: disc;
+}
+
+/* estilo para el li en la lista general de preguntas */
+.preguntas-list li {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+/* ajustar botones y acciones para que estén dentro del card */
+.pregunta-card .acciones {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* opcional: que al hacer hover se resalte ligeramente */
+.pregunta-card:hover {
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+  transition: all 0.12s ease;
+}
+
+/*PREGTUNAS FORMUARIO*/
+/* ----------- FORMULARIO DE PREGUNTAS ----------- */
+.pregunta-form-card {
+  width: 30%;
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pregunta-form-card h2 {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+/* Inputs uniformes */
+.input-estandar {
+  width: 90%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.input-estandar:focus {
+  border-color: #1a73e8;
+}
+
+/* Botón igual al estilo de exámenes y temas */
+.btn-guardar {
+  padding: 10px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-guardar:hover {
+  background: #0f5ec4;
+}
+
+/*---------------------------------------------------------------------*/
+/*------------------VISTA EXAMENES PREGTUNAS ESTUDIANTE----------------*/
+/*---------------------------------------------------------------------*/
+.examen-est-container {
+  width: 80%;
+  margin: auto;
+  text-align: left;
+}
+
+.examen-titulo {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.examen-descripcion {
+  margin-bottom: 25px;
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.preguntas-estudiante-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* tarjeta de cada pregunta */
+.pregunta-est-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  transition: 0.2s ease;
+}
+
+.pregunta-est-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}
+
+.pregunta-text {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* lista de respuestas */
+.respuestas-est-list {
+  list-style: none;
+  padding-left: 10px;
+}
+
+.respuesta-item {
+  margin-bottom: 8px;
+}
+
+.respuesta-descripcion {
+  opacity: 0.7;
+}
+
+/* botón entregar */
+.btn-entregar-examen {
+  margin-top: 25px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #4caf50;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  float: right;
+  transition: 0.2s;
+}
+
+.btn-entregar-examen:hover {
+  background: #43cf4a;
+}
+
+.cont-btn-entregarex{
+  padding-bottom: 100px;
+}
