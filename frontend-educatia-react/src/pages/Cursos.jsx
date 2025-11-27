@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { editarCurso } from "../services/cursosService";
+import "../styles/cards.css";
 
 const Cursos = () => {
   const API_URL = "http://localhost:8094/api/cursos";
@@ -61,6 +62,71 @@ const Cursos = () => {
 
   return (
     <div>
+    <h1 className ="tituloPagina">¡Bienvenid@ a la administración de tus Cursos!</h1>
+
+    {/* --- FORMULARIO PARA CREAR CURSO --- */}
+    <div className="card form-card">
+      <h3>Crear Curso</h3>
+
+      <input
+        type="text"
+        placeholder="Nombre del curso"
+        value={nombreCurso}
+        onChange={(e) => setNombreCurso(e.target.value)}
+      />
+
+      <input
+        type="text"
+        placeholder="Descripción del curso"
+        value={descripcionCurso}
+        onChange={(e) => setDescripcionCurso(e.target.value)}
+      />
+
+      <button onClick={crearCurso}>Agregar Curso</button>
+    </div>
+
+    {/* --- LISTADO DE CURSOS --- */}
+    <div className="cursos-container">
+      {cursos.map((curso) => (
+        <div className="card" key={curso.idCurso || curso.id_curso}>
+
+          <div className="card-content">
+          <div className="card-title">{curso.nombreAsignatura}</div>
+          <p>{curso.descripcion}</p>
+          </div>
+
+          <div className="card-buttons">
+            <button
+              onClick={() =>
+                verTemas(
+                  curso.idCurso || curso.id_curso,
+                  curso.nombreAsignatura
+                )
+              }
+            >
+              Ver Temas
+            </button>
+
+            <button className= "edit" onClick={() => editarCursoHandler(curso)}>
+              Editar
+            </button>
+
+            <button
+              className="delete"
+              onClick={() =>
+                eliminarCurso(curso.idCurso || curso.id_curso)
+              }
+            >
+              Eliminar
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+    /*
+    <div>
       <h1>Cursos</h1>
       <div>
         <input
@@ -91,6 +157,7 @@ const Cursos = () => {
         ))}
       </ul>
     </div>
+    */
   );
 };
 
