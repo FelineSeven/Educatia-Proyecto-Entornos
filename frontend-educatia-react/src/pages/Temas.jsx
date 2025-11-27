@@ -123,50 +123,6 @@ const Temas = () => {
     </div>
   </div>
 
-    /*
-    <div>
-      <h1>Temas del curso</h1>
-      <div>
-        <input
-          type="text"
-          placeholder="Título del tema"
-          value={titulo}
-          onChange={(e) => setTitulo(e.target.value)}
-        />
-        <textarea
-          placeholder="Descripción del tema"
-          value={descripcion}
-          onChange={(e) => setDescripcion(e.target.value)}
-        />
-        <button onClick={crearTema}>Crear Tema</button>
-      </div>
-
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Título</th>
-            <th>Descripción</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {temas.map((tema) => (
-            <tr key={tema.idTema}>
-              <td>{tema.idTema}</td>
-              <td>{tema.titulo}</td>
-              <td>{tema.descripcion}</td>
-              <td>
-                <button onClick={() => irAExamenes(tema.idTema)}>Exámenes</button>
-                <button onClick={() => editarTema(tema)}>Editar</button>
-                <button onClick={() => eliminarTema(tema.idTema)}>Eliminar</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-    */
 );
 };
 

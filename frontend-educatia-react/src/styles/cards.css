@@ -5,7 +5,7 @@
 }
 
 body{
-  background-image:  url("../assets/fondo-educatia.jpg");
+  background-image:  url("../assets/fondo2-edu.jpg");
 }
 body::before {
   content: "";
@@ -279,3 +279,112 @@ button.edit{
 .table-button:hover {
   opacity: 0.8;
 }
+
+
+/*-----------------------------------------------------*/
+/*------------------EXAMENES----------------*/
+/*-----------------------------------------------------*/
+
+.crearExamenCont{
+  text-align: center;
+}
+.btn-preguntas {
+  color: rgb(0, 0, 0);
+}
+
+.crearExamen-btn{
+  background: #39539b;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.crearExamen-btn:hover{
+  background: #5570bb;
+}
+
+/*-----------------------------------------------------*/
+/*------------------EXAMENES FORMULARIO----------------*/
+/*-----------------------------------------------------*/
+
+/* Contenedor centrado */
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+/* Tarjeta */
+.form-card {
+  width: 450px;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Título */
+.form-card h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1f3c88;
+}
+
+/* Etiquetas */
+.form-card label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Inputs y textarea */
+.form-card input,
+.form-card textarea {
+  width: 90%;
+  padding: 12px;
+  margin: 2px;
+  border: 1px solid #d0d4e4;
+  border-radius: 8px;
+  background: #f8f9ff;
+  font-size: 15px;
+  transition: 0.2s ease;
+
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+  border-color: #3c6ff9;
+  box-shadow: 0 0 6px rgba(60,111,249,0.35);
+  outline: none;
+}
+
+/* Botón */
+.form-card .btn-primary {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: linear-gradient(to bottom right, #5a82f7, #3c6ff9);
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.form-card .btn-primary:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 14px rgba(60,111,249,0.45);
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+

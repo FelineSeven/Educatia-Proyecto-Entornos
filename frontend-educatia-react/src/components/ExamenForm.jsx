@@ -76,6 +76,47 @@ export default function ExamenForm() {
   };
 
   return (
+    
+  <div className="form-container">
+    <div className="form-card">
+      <h1>{id ? "Editar Examen" : "Crear Examen"}</h1>
+
+      <form onSubmit={guardar}>
+        <label>Título del examen</label>
+        <input
+          name="titulo"
+          placeholder="Título"
+          value={form.titulo}
+          onChange={handleChange}
+          required
+        />
+
+        <label>Descripción</label>
+        <textarea
+          name="descripcion"
+          placeholder="Descripción"
+          value={form.descripcion}
+          onChange={handleChange}
+        />
+
+        <label>Valor del examen</label>
+        <input
+          type="number"
+          name="valorExamen"
+          placeholder="Valor del examen"
+          value={form.valorExamen}
+          onChange={handleChange}
+          required
+        />
+
+        <button className="btn-primary">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+
+
+    /*
     <div className="container mt-4">
       <h2>{id ? "Editar Examen" : "Crear Examen"}</h2>
 
@@ -111,6 +152,7 @@ export default function ExamenForm() {
         <button className="btn btn-success mt-3">Guardar</button>
       </form>
     </div>
+    */
   );
 }
 

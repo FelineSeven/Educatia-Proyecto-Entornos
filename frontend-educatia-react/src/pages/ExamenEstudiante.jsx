@@ -21,6 +21,46 @@ export default function ExamenesEstudiante() {
 
   return (
     <div>
+    <h1 className="tituloPagina">Exámenes del Tema</h1>
+
+    <div className="table-container">
+      {examenes.length === 0 && <p>No hay exámenes disponibles.</p>}
+
+      {examenes.length > 0 && (
+        <table className="custom-table">
+          <thead>
+            <tr>
+             
+              <th>Título</th>
+              <th>Descripción</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {examenes.map(ex => (
+              <tr key={ex.id_examen}>
+               
+                <td>{ex.titulo}</td>
+                <td>{ex.descripcion}</td>
+                <td>
+                  <button
+                    className="table-button"
+                    onClick={() => navigate(`/examen-estudiante/${ex.id_examen}`)}
+                  >
+                    Comenzar examen
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </div>
+  </div>
+
+    /*
+    <div>
       <h2>Exámenes del Tema</h2>
 
       {examenes.length === 0 && <p>No hay exámenes disponibles.</p>}
@@ -38,6 +78,7 @@ export default function ExamenesEstudiante() {
         ))}
       </ul>
     </div>
+    */
   );
 }
 
