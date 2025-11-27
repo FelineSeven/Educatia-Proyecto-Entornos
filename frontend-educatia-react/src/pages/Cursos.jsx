@@ -124,40 +124,6 @@ const Cursos = () => {
       ))}
     </div>
   </div>
-
-    /*
-    <div>
-      <h1>Cursos</h1>
-      <div>
-        <input
-          type="text"
-          placeholder="Nombre del curso"
-          value={nombreCurso}
-          onChange={(e) => setNombreCurso(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Descripción del curso"
-          value={descripcionCurso}
-          onChange={(e) => setDescripcionCurso(e.target.value)}
-        />
-        <button onClick={crearCurso}>Agregar</button>
-      </div>
-
-      <ul>
-        {cursos.map((curso) => (
-          <li key={curso.idCurso || curso.id_curso}>
-            <strong>{curso.nombreAsignatura}</strong> - {curso.descripcion}
-            <button onClick={() => verTemas(curso.idCurso || curso.id_curso, curso.nombreAsignatura)}>
-              Ver Temas
-            </button>
-            <button onClick={() => editarCursoHandler(curso)}>Editar</button>
-            <button onClick={() => eliminarCurso(curso.idCurso || curso.id_curso)}>Eliminar</button>
-          </li>
-        ))}
-      </ul>
-    </div>
-    */
   );
 };
 

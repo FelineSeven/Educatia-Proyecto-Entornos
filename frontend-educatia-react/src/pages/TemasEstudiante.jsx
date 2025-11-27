@@ -16,6 +16,48 @@ export default function TemasEstudiante() {
   }, [idCurso]);
 
   return (
+  <div>
+    <h1 className="tituloPagina">Temas del Curso</h1>
+
+    <div className="table-container">
+      {temas.length === 0 && <p>No hay temas disponibles.</p>}
+
+      {temas.length > 0 && (
+        <table className="custom-table">
+          <thead>
+            <tr>
+              
+              <th>Título</th>
+              <th>Descripción</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {temas.map(t => (
+              <tr key={t.idTema}>
+                
+                <td>{t.titulo}</td>
+                <td>{t.descripcion || "Sin descripción"}</td>
+
+                <td>
+                  <button
+                    className="table-button"
+                    onClick={() => navigate(`/examenes-estudiante/${t.idTema}`)}
+                  >
+                    Ver Exámenes
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </div>
+  </div>
+
+
+    /*
     <div>
       <h2>Temas del Curso</h2>
       <ul>
@@ -30,5 +72,6 @@ export default function TemasEstudiante() {
         ))}
       </ul>
     </div>
+    */
   );
 }

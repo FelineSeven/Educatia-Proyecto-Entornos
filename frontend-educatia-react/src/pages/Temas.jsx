@@ -75,6 +75,55 @@ const Temas = () => {
   };
 
   return (
+  <div className="temas-page">
+    <h1 className="tituloPagina">Temas del Curso</h1>
+
+    {/* FORMULARIO */}
+    <div className="tema-form">
+      <h3>Agregar Tema</h3>
+      <input
+        type="text"
+        placeholder="Título del tema"
+        value={titulo}
+        onChange={(e) => setTitulo(e.target.value)}
+      />
+      <textarea
+        placeholder="Descripción del tema"
+        value={descripcion}
+        onChange={(e) => setDescripcion(e.target.value)}
+      />
+      <button onClick={crearTema}>Crear Tema</button>
+    </div>
+
+    {/* TABLA */}
+    <div className="tabla-temas-container">
+      <table className="tabla-temas">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {temas.map((tema) => (
+            <tr key={tema.idTema}>
+              <td>{tema.titulo}</td>
+              <td>{tema.descripcion}</td>
+              <td className="acciones">
+                <button className="btn-examen" onClick={() => irAExamenes(tema.idTema)}>Ver Exámenes</button>
+                <button className="btn-editar" onClick={() => editarTema(tema)}>Editar</button>
+                <button className="btn-eliminar" onClick={() => eliminarTema(tema.idTema)}>Eliminar</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+    /*
     <div>
       <h1>Temas del curso</h1>
       <div>
@@ -117,7 +166,8 @@ const Temas = () => {
         </tbody>
       </table>
     </div>
-  );
+    */
+);
 };
 
 export default Temas;

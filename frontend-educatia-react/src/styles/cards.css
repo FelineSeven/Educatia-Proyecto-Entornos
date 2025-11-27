@@ -1,5 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+* {
+  font-family: 'Nunito', sans-serif !important;
+}
+
+body{
+  background-image:  url("../assets/fondo-educatia.jpg");
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.884); /* 0.75 = más suave */
+  pointer-events: none;
+  z-index: -1;
+}
+
 .card {
-  background: white;
+  background: linear-gradient(to bottom, #ffffff, #f1f7fd); 
   border-radius: 12px;
   padding: 20px;
   width: 80%;
@@ -9,6 +30,16 @@
   flex-direction: column;
   justify-content: space-between; /* deja los botones abajo */
   height: 200px; /* ajusta si quieres más espacio */
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 10px 10px 18px rgba(1, 121, 233, 0.3);
+
+  /*box-shadow: 0 6px 14px rgba(0,0,0,0.20);  sombra más fuerte */
 }
 
 /* título y descripción alineados a la izquierda */
@@ -83,14 +114,14 @@ button.edit{
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background: #4caf50;
+  background: #39539b;
   color: white;
   font-size: 14px;
   transition: 0.2s ease;
 }
 
 .form-card button:hover {
-  background: #43cf4a;
+  background: #5570bb;
 }
 
 .tituloPagina{
@@ -99,39 +130,152 @@ button.edit{
   color:rgb(0, 0, 0);
 }
 
-/*
-.card {
-  background: #ffffff;
+.titulo-educatia{
+  color: #224f9c;
+  font-size: 100px;
+}
+
+
+/*--------------------------TEMAS GENERAL------------------*/
+/* Contenedor general */
+
+/* --- FORMULARIO --- */
+.tema-form {
+  width: 260PX;
+  backdrop-filter: blur(4px); /* efecto vidrio */
+  background: rgba(255,255,255,0.4); /* transparente */
   padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  margin-bottom: 20px;
-  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: 25px;
 
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin: 0 auto; 
 }
 
-
-
-.card-buttons {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
+.tema-form input,
+.tema-form textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
 }
 
-.card button {
-  padding: 8px 14px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  background-color: #4C8BFF;
+.tema-form button {
+  background: #39539b;
   color: white;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.tema-form button:hover {
+  background: #5570bb;
+}
+
+/* --- TABLA --- */
+.tabla-temas-container {
+  margin-left: 2%;
+  margin-right: 2%;
+  background: rgba(255,255,255,0.2); /* transparente */
+  backdrop-filter: blur(2px);
+  padding: 15px;
+  border-radius: 12px;
+  width: 95%;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+}
+
+.tabla-temas {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-temas thead {
+  background: rgba(0, 100, 200, 0.2);
+}
+
+.tabla-temas th,
+.tabla-temas td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* --- BOTONES --- */
+.acciones button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-examen {
+  color: rgb(0, 0, 0);
+}
+
+.btn-editar {
+  color: black;
+}
+
+.btn-eliminar {
+  background: #e53935;
+  color: white;
+}
+
+/* Hover */
+.acciones button:hover {
+  opacity: 0.8;
+}
+
+
+/*----------------------TEMAS ESTUDIANTE------------------*/
+
+/* Contenedor centrado */
+.table-container {
+  width: 90%;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+}
+
+/* Tabla */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  background: transparent;
+}
+
+.custom-table thead {
+  background: #d8e9ff;
+}
+
+.custom-table th {
+  padding: 12px;
+  text-align: left;
   font-weight: bold;
 }
 
-.card button.delete {
-  background-color: #ff4c4c;
+.custom-table td {
+  padding: 10px;
+  border-bottom: 1px solid #cfd9e8;
 }
-*/
+
+/* Botón */
+.table-button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  transition: 0.2s ease;
+}
+
+.table-button:hover {
+  opacity: 0.8;
+}
